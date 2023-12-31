@@ -5,17 +5,9 @@ module SimpleCalendar
       start_date.beginning_of_week.strftime(format).to_i
     end
 
-    def number_of_weeks
-      1
-    end
-
-    def end_week
-      week_number + number_of_weeks - 1
-    end
-
     def date_range
       starting = start_date.beginning_of_week
-      ending = (starting + (number_of_weeks - 1).weeks).end_of_week
+      ending = starting.end_of_week
 
       (starting..ending).to_a
     end
