@@ -56,6 +56,18 @@ module SimpleCalendar
       td_class
     end
 
+    def td_classes_for_hour(day, hour)
+      today = Date.current
+      events = sorted_events.fetch(day, [])
+      hour_events = events.select { |event| event.parent.start.hour == hour }
+
+      td_class = ["hour"]
+      td_class << "today" if today == day
+      td_class << "has-events" if hour_events.any?
+
+      td_class
+    end
+
     def tr_classes_for(week)
       today = Date.current
       tr_class = ["week"]
