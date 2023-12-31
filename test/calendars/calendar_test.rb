@@ -23,6 +23,8 @@ class CalendarTest < ActionView::TestCase
     assert_equal "simple_calendar/calendar", SimpleCalendar::Calendar.new(view).partial_name
     assert_equal "simple_calendar/month_calendar", SimpleCalendar::MonthCalendar.new(view).partial_name
     assert_equal "simple_calendar/week_calendar", SimpleCalendar::WeekCalendar.new(view).partial_name
+    assert_equal "simple_calendar/one_week_calendar", SimpleCalendar::OneWeekCalendar.new(view).partial_name
+
   end
 
   test "allows to override the default partial" do
